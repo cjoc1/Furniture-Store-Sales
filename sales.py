@@ -36,48 +36,45 @@ sales_data = {'product': ['Chair', 'Couch', 'Bed'],
 # Create a Pandas DataFrame
 sales_df = pd.DataFrame(sales_data)
 
-# Given data for Average Purchase Frequency by Country
+# Given data for Total Purchases by Country
 country_data = {'country': ['Australia', 'Belgium', 'Canada', 'Denmark', 'Finland', 'France', 'Germany', 'India', 'Ireland',
                              'Israel', 'Italy', 'Luxembourg', 'Moldova', 'Netherlands', 'Norway', 'South Africa', 'Spain',
                              'Sweden', 'Switzerland', 'United Arab Emirates', 'United Kingdom', 'United States'],
-                'average_purchase_frequency': [1] * 22}
+                'total_purchases': [4, 1, 11, 3, 1, 1, 1, 1, 4, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 3, 10, 48]}
 
 # Create a Pandas DataFrame
 country_df = pd.DataFrame(country_data)
 
 # Create subplots
-plt.subplot(3, 2, 1)  # 3 rows, 2 columns, position 1
+plt.figure(figsize=(15, 12))
+
+plt.subplot(2, 2, 1)
 plt.bar(df['Product'], df['Total_Revenue'], color='skyblue')
 plt.title('Total Revenue by Product')
 plt.xlabel('Product')
 plt.ylabel('Total Revenue')
 
-plt.subplot(3, 2, 2)  # 3 rows, 2 columns, position 2
+plt.subplot(2, 2, 2)
 plt.bar(payment_df['payment_type'], payment_df['average_order_value'], color='lightgreen')
 plt.title('Average Order Value by Payment Type')
 plt.xlabel('Payment Type')
 plt.ylabel('Average Order Value')
 
-plt.subplot(3, 2, 3)  # 3 rows, 2 columns, position 3
-plt.bar(state_data['state'], state_data['number_of_customers'], color='lightcoral')
-plt.title('Number of Customers by State')
-plt.xlabel('State')
-plt.ylabel('Number of Customers')
-
-plt.subplot(3, 2, 4)  # 3 rows, 2 columns, position 4
+plt.subplot(2, 2, 3)
 plt.bar(sales_df['product'], sales_df['sales_volume'], color='lightcoral')
 plt.title('Sales Volume by Product')
 plt.xlabel('Product')
 plt.ylabel('Sales Volume')
 
-plt.subplot(3, 2, 5)  # 3 rows, 2 columns, position 5
-plt.bar(country_df['country'], country_df['average_purchase_frequency'], color='lightblue')
-plt.title('Average Purchase Frequency by Country')
+plt.subplot(2, 2, 4)
+plt.bar(country_df['country'], country_df['total_purchases'], color='lightblue')
+plt.title('Total Purchases by Country')
 plt.xlabel('Country')
-plt.ylabel('Average Purchase Frequency')
+plt.ylabel('Total Purchases')
+plt.xticks(rotation=45, ha='right')  # Rotate x-axis labels for better visibility
 
-# Adjust layout to prevent overlapping
 plt.tight_layout()
 
 # Display the plots
 plt.show()
+
