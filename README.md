@@ -12,7 +12,7 @@ The primary goal is to analyze the provided sales data, extracting meaningful in
 
 Visualizations
 
-Data visualizations using ADDDDDDDDDD are employed to effectively communicate the insights derived from the analysis. Visualizations make it easier for stakeholders to understand the data and make informed decisions.
+Data visualizations using python,pandas and matplotlib are employed to effectively communicate the insights derived from the analysis. Visualizations make it easier for stakeholders to understand the data and make informed decisions.
 
 Query Results Interpretation with Business Decisions:
 1. Total Sales Revenue for Each Product:
