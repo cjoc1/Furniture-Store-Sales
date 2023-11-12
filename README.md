@@ -40,18 +40,19 @@ Chair: 84 units
 Couch: 12 units
 Bed: 4 units
 Business Decision: Given the high popularity of Chairs, the company should ensure sufficient inventory and consider introducing variations or complementary products. This could lead to cross-selling opportunities, enhancing the overall shopping experience.
-5. Average Purchase Frequency for Customers from Each Country:
-
-Australia: 1 purchase/customer
-Canada: 1 purchase/customer
-United States: 1 purchase/customer
+5. Purchase Frequency for Customers from Each Country:
+Top 3:
+United States: 48
+United Kingdom: 10
+Canada: 11
 Business Decision: While purchase frequencies are consistent, the company could explore customer engagement strategies such as loyalty programs or personalized recommendations to encourage repeat purchases and enhance customer retention.
+
 6. Customer Churn Rate:
 
 Total customers not purchasing in the last 30 days: 15 customers
 Business Decision: To retain customers at risk of churning, the company should consider targeted outreach efforts, personalized promotions, or loyalty rewards to re-engage and incentivize these customers to make new purchases.
 7. Correlation Between Customer Latitude and Average Order Value:
-
+Top 3:
 New Rochelle, NY, United States: $7,500
 Woodsboro, MD, United States: $7,500
 Pittsfield, VT, United States: $5,550
