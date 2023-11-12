@@ -152,16 +152,21 @@ LIMIT 10;
 
 
 /*
-Average purchase frequency for customers from each country: This query helps understand how customer purchase behavior varies across different countries. Businesses can tailor their marketing strategies and customer support offerings to specific countries based on these insights.
+Purchase frequency for customers from each country: This query helps understand how customer purchase behavior varies across different countries. Businesses can tailor their marketing strategies and customer support offerings to specific countries based on these insights.
 */
-
-SELECT country, AVG(purchases_per_customer) AS average_purchase_frequency
+SELECT country,
+COUNT(DISTINCT ID) AS customer_count,
+SUM(purchase_count) AS total_purchases
 FROM (
-    SELECT name, country, COUNT(*) AS purchases_per_customer
-    FROM sales
-    GROUP BY name, country
-) AS customer_purchases
+  SELECT country,
+    ID,
+    COUNT(ID) AS purchase_count
+  FROM sales
+  GROUP BY country, ID
+) AS purchase_summary
 GROUP BY country;
+
+
 
 
 /*
@@ -214,9 +219,9 @@ Top 10 Most Popular Products in Terms of Sales Volume:
 
 The fourth query identifies the top 10 most popular products in terms of sales volume. The results show that the Chair is the most popular product, followed by the Couch and Bed products.
 
-Average Purchase Frequency for Customers from Each Country:
+Purchase Frequency for Customers from Each Country:
 
-The fifth query calculates the average purchase frequency for customers from each country. The results show that customers from Australia have the highest average purchase frequency, followed by customers from Canada and Israel. Customers from India have the lowest average purchase frequency.
+The fifth query calculates the average purchase frequency for customers from each country. The results show that customers from United States,Unite Kingdom and Canada are the top 3 countries with the highest purchase frequency. 
 
 Customer Churn Rate:
 
@@ -228,3 +233,4 @@ The seventh query identifies geographical trends in customer spending behavior b
 
 Overall, the query results provide valuable insights into the sales performance, customer behavior, and market presence of the online furniture store. These insights can be used to inform business decisions about marketing strategies, product development, and pricing.
 */
+
